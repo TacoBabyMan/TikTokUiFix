@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tiktok UI fix
 // @namespace
-// @version      2.7
+// @version      2.8
 // @description  Fixes the terrible UI on pc for tiktok
 // @author       Neo
 // @match        https://www.tiktok.com/*
@@ -15,8 +15,22 @@ document.querySelector('html').addEventListener('keypress',(event)=>{
     console.log("it worked;");
   }
 });
+document.querySelector('[data-e2e="profile-icon"]').addEventListener('mouseover',()=>{
+  document.querySelector('[class*="-DivContainer"]').style.filter="invert(1)";
+  document.querySelector('[class*="-DivProfileContainer"]').style.color="rgb(22, 24, 35)";
+  document.querySelectorAll('[class*="-LiItemWrapper"]')[0].style.filter="invert(1)";
+  document.querySelectorAll('[class*="-LiItemWrapper"]')[1].style.filter="invert(1)";
+  document.querySelectorAll('[class*="-LiItemWrapper"]')[2].style.filter="invert(1)";
+  document.querySelectorAll('[class*="-LiItemWrapper"]')[3].style.filter="invert(1)";
+  document.querySelectorAll('[class*="-LiItemWrapper"]')[4].style.filter="invert(1)";
+  document.querySelectorAll('[class*="-LiItemWrapper"]')[5].style.filter="invert(1)";
+  document.querySelectorAll('[class*="-LiItemWrapper"]')[6].style.filter="invert(1)";
+});
 const applied = () =>{
   if (document.querySelectorAll('[class*="-DivHeaderWrapperMain"]')[0].style.backgroundColor != 'black'){
+    try{
+      document.querySelector('[data-e2e="top-login-button"]').click();
+    }catch{};
    apply();
   }
 };
@@ -44,16 +58,21 @@ const apply = () =>{
     height:100vh;
     background-color:black;
   }
+
   [class*="-DivBodyContainer"]{
     left:0px !important;
     position:absolute !important;
   }
   [class*="-DivMainContainer"]{
+    display:flex;
+    justify-content:center;
     position:absolute !important;
-    left:60%;
-    transform:translate(,-50%);
     zoom:120%;
-    padding:0px !important;
+    min-width:80vw !important;
+    max-width:80vw !important;
+    margin:0px !important;
+    padding-left:6px !important;
+    padding-top:0px !important;
   }
 
   [class*="-DivHeaderCenterContainer"]{
