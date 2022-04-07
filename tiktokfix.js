@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tiktok UI fix
 // @namespace
-// @version      2.5
+// @version      2.7
 // @description  Fixes the terrible UI on pc for tiktok
 // @author       Neo
 // @match        https://www.tiktok.com/*
@@ -49,16 +49,11 @@ const apply = () =>{
     position:absolute !important;
   }
   [class*="-DivMainContainer"]{
-    position:relative !important;
-    left:20%;
-    transform:translate(-50%,0%);
+    position:absolute !important;
+    left:60%;
+    transform:translate(,-50%);
+    zoom:120%;
     padding:0px !important;
-    margin:0px !important;
-  }
-
-  [class*="-DivMainContainer"]{
-    transform:scale(1.22);
-    top:77vh;
   }
 
   [class*="-DivHeaderCenterContainer"]{
