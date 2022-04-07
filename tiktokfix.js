@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tiktok UI fix
 // @namespace
-// @version      2.8
+// @version      2.7
 // @description  Fixes the terrible UI on pc for tiktok
 // @author       Neo
 // @match        https://www.tiktok.com/*
@@ -15,17 +15,19 @@ document.querySelector('html').addEventListener('keypress',(event)=>{
     console.log("it worked;");
   }
 });
-document.querySelector('[data-e2e="profile-icon"]').addEventListener('mouseover',()=>{
-  document.querySelector('[class*="-DivContainer"]').style.filter="invert(1)";
-  document.querySelector('[class*="-DivProfileContainer"]').style.color="rgb(22, 24, 35)";
-  document.querySelectorAll('[class*="-LiItemWrapper"]')[0].style.filter="invert(1)";
-  document.querySelectorAll('[class*="-LiItemWrapper"]')[1].style.filter="invert(1)";
-  document.querySelectorAll('[class*="-LiItemWrapper"]')[2].style.filter="invert(1)";
-  document.querySelectorAll('[class*="-LiItemWrapper"]')[3].style.filter="invert(1)";
-  document.querySelectorAll('[class*="-LiItemWrapper"]')[4].style.filter="invert(1)";
-  document.querySelectorAll('[class*="-LiItemWrapper"]')[5].style.filter="invert(1)";
-  document.querySelectorAll('[class*="-LiItemWrapper"]')[6].style.filter="invert(1)";
-});
+try{
+  document.querySelector('[data-e2e="profile-icon"]').addEventListener('mouseover',()=>{
+    document.querySelector('[class*="-DivContainer"]').style.filter="invert(1)";
+    document.querySelector('[class*="-DivProfileContainer"]').style.color="rgb(22, 24, 35)";
+    document.querySelectorAll('[class*="-LiItemWrapper"]')[0].style.filter="invert(1)";
+    document.querySelectorAll('[class*="-LiItemWrapper"]')[1].style.filter="invert(1)";
+    document.querySelectorAll('[class*="-LiItemWrapper"]')[2].style.filter="invert(1)";
+    document.querySelectorAll('[class*="-LiItemWrapper"]')[3].style.filter="invert(1)";
+    document.querySelectorAll('[class*="-LiItemWrapper"]')[4].style.filter="invert(1)";
+    document.querySelectorAll('[class*="-LiItemWrapper"]')[5].style.filter="invert(1)";
+    document.querySelectorAll('[class*="-LiItemWrapper"]')[6].style.filter="invert(1)";
+  });
+}catch{};
 const applied = () =>{
   if (document.querySelectorAll('[class*="-DivHeaderWrapperMain"]')[0].style.backgroundColor != 'black'){
     try{
