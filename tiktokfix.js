@@ -108,12 +108,12 @@ const apply = () =>{
     padding:0px;
   }
   [class*="-DivPanelContainer"]{
-    position:absolute;
-    margin-top:20px;
+    margin-top:64px !important;
   }
   [class*="-DivTabsContainer"]{
     background-color:black !important;
     border-radius:24px;
+    left:45% !important;
   }
   [class*="-DivHeaderWrapperMain"], [class*="-DivScrollContainer"], [class*="-DivHeaderContainer"], [data-e2e="sug-container"]{
       background-color:black !important;
